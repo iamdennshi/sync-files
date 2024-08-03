@@ -54,7 +54,7 @@ def main():
     print('sync_files')
 
     FROM="D:/ДИПЛОМ/"
-    TO="E:/other/ПГАТУ/ДИПЛОМ/"
+    TO="E:/other/ПГАТУ/бакалавр/ДИПЛОМ/"
     print(f"Диплом >>> {FROM} -> {TO}")
     syncer(FROM, TO, "local-dirs")
 

@@ -9,3 +9,13 @@
 - [+] Sync obsidian files
 - [+] Sync a file (passd)
 - [] Check if phone or HDD is connected
+
+### Синхронизация на жесткий диск
+
+Использовать: `py sync.py files`
+
+Синхранизирует:
+
+- obsidian
+- ДИПЛОМ
+- passd
