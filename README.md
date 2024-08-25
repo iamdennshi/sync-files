@@ -1,21 +1,15 @@
-### Used
+### Описание
 
-- ADB 1.0.41 (platform-tools)
-- Adbsync 1.4.0 (py module)
-- Dirsync 2.2.5 (py module) - sync local dirs
+Скрипт синхронизации файлов и деректорий
+Достаточно указать пути в файле `config.py` и запустить `py main.py`
 
-### TODO
+### Конфигурация
 
-- [+] Sync obsidian files
-- [+] Sync a file (passd)
-- [] Check if phone or HDD is connected
+В файле `config.py` указать пару источник и назначение
 
-### Синхронизация на жесткий диск
-
-Использовать: `py sync.py files`
-
-Синхранизирует:
-
-- obsidian
-- ДИПЛОМ
-- passd
+```
+paths = {
+  "source": "target",
+  "source1": "target1"
+}
+```
