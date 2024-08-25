@@ -1,10 +1,12 @@
 import os
 import re
+from dotenv import load_dotenv
 from dirsync import sync
 from config import paths
 
 def main():
-  DEBUG = False
+  load_dotenv()
+  DEBUG = os.getenv('DEBUGING') == 'True'
 
   for src, target in paths.items():
     # Если винда меняем / на \\
