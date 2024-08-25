@@ -3,11 +3,13 @@ import datetime
 import sys
 import os
 import shutil
+import re
 from dirsync import sync
+from config import paths
 
 
-def main(): 
-  __DEBUG__ = False
+def main1(): 
+  __DEBUG__ = True
   syncer_modes = ["from-andorid", "to-android", "local-dirs", "local-file"]
 
   def syncer(from_dir, to_dir, mode):
@@ -91,15 +93,21 @@ def main():
   else:
     print(f"[ERROR] No mode specified \n\tAvailable modes: {list(modes.keys())}")
 
+def main():
+  DEBUG = True
+
+  for src, target in paths.items():
+    # Если винда меняем / на \\
+    if os.name == 'nt':
+      src = re.sub(r'/', r'\\', src)
+      target = re.sub(r'/', r'\\', target)
+
+    print(src, "->", target)
+
+    if not DEBUG:
+      sync(src, target, "sync", verbose=True, purge=True)
+
 
 
 if __name__ == "__main__":
   main()
-
-
-
-
-
-
-
-
